@@ -1,0 +1,52 @@
+:root { color-scheme: light; --ink: #172321; --muted: #71807c; --line: #dce5e0; --mint: #c8f27c; --cream: #f7f8f2; --green: #1e5549; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 15px/1.5 Inter, ui-sans-serif, system-ui, sans-serif; }
+.shell { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 90px; }
+.eyebrow { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+h1 { font-size: clamp(42px, 7vw, 76px); letter-spacing: -.07em; line-height: .98; margin: 22px 0; }
+h1 em { color: var(--green); font-style: normal; }
+.intro { color: var(--muted); max-width: 540px; font-size: 17px; margin-bottom: 42px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 25px; margin-top: 16px; box-shadow: 0 8px 30px #18382b08; }
+label { display: block; font-weight: 700; margin-bottom: 8px; }
+small, .muted { color: var(--muted); }
+.key-row { display: flex; gap: 10px; }
+.settings-row { align-items: center; display: flex; gap: 16px; justify-content: space-between; }
+.settings-row small { display: block; margin-top: 4px; }
+input[type=password] { border: 1px solid var(--line); border-radius: 9px; flex: 1; min-width: 0; padding: 12px 14px; font: inherit; }
+.button { border: 0; border-radius: 9px; cursor: pointer; font: inherit; font-weight: 700; padding: 12px 17px; }
+.button:disabled { cursor: not-allowed; opacity: .45; }
+.primary { background: var(--green); color: white; width: 100%; margin-top: 18px; }
+.secondary { background: #edf2ed; color: var(--green); white-space: nowrap; }
+.dropzone { align-items: center; border: 1.5px dashed #aabdb2; border-radius: 13px; cursor: pointer; display: flex; flex-direction: column; gap: 3px; padding: 35px; text-align: center; }
+.dropzone strong { font-size: 18px; }
+.folder-icon { align-items: center; background: var(--mint); border-radius: 50%; color: var(--green); display: flex; font-size: 25px; height: 48px; justify-content: center; margin-bottom: 8px; width: 48px; }
+.selection { padding: 14px 2px 0; }
+.eta { font-size: 12px; padding: 5px 2px 0; }
+.queue-header { align-items: center; display: flex; gap: 12px; justify-content: space-between; }
+h2 { font-size: 16px; margin: 0; }
+#counter { color: var(--muted); font-size: 13px; }
+.progress { background: #edf2ed; border-radius: 5px; height: 7px; margin: 17px 0; overflow: hidden; }
+.progress span { background: var(--mint); display: block; height: 100%; transition: width .3s; width: 0; }
+.queue { max-height: 380px; overflow: auto; }
+.queue.empty { color: var(--muted); padding: 25px 0; text-align: center; }
+.file-row { align-items: center; border-top: 1px solid #edf1ee; display: flex; gap: 12px; padding: 12px 2px; }
+.file-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.status { color: var(--muted); font-size: 12px; }
+.status.ok { color: #31765d; }.status.error { color: #b34943; }.status.active { color: #97720e; }
+.process-state { color: var(--muted); font-size: 12px; margin-left: auto; }
+.process-state.active { color: #97720e; }
+.rate-note { color: var(--muted); font-size: 12px; margin: 17px 0 0; }
+.usage { background: #f4f7f2; border-radius: 9px; margin-top: 16px; padding: 14px; }
+.usage-grid { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 8px; }.usage strong { display: block; font-size: 19px; }
+.hidden { display: none; }
+.history { max-height: 420px; overflow: auto; }
+.history.empty { color: var(--muted); padding: 25px 0; text-align: center; }
+.history-row { align-items: center; border-top: 1px solid #edf1ee; display: flex; gap: 14px; padding: 13px 2px; }
+.history-main { flex: 1; min-width: 0; }
+.history-main strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.history-main small, .history-result small { color: var(--muted); display: block; font-size: 11px; }
+.history-result { min-width: 155px; }
+.history-row > a { color: var(--green); font-size: 12px; white-space: nowrap; }
+.history-status { font-size: 12px; font-weight: 700; }
+.status-completed { color: #31765d; }.status-failed { color: #b34943; }
+@media (max-width: 600px) { .shell { padding-top: 35px; width: min(100% - 24px, 900px); } .key-row { flex-direction: column; } }

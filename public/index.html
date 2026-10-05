@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VT Folder Scanner</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">VIRUSTOTAL / LOCAL SCANNER</p>
+        <h1>Analiza una carpeta,<br><em>archivo a archivo.</em></h1>
+        <p class="intro">Selecciona una carpeta local y envía sus archivos a VirusTotal. La API key se configura de forma segura en el archivo <code>.env</code>.</p>
+      </header>
+
+      <section class="card settings">
+        <div class="settings-row">
+          <div><strong>Configuración</strong><small>La clave se lee exclusivamente desde <code>.env</code>.</small></div>
+          <button id="usageButton" class="button secondary">Consultar uso</button>
+        </div>
+        <div id="usage" class="usage hidden"></div>
+      </section>
+
+      <section class="card picker">
+        <input id="folderInput" type="file" webkitdirectory directory multiple hidden>
+        <label for="folderInput" class="dropzone">
+          <span class="folder-icon">↗</span>
+          <strong>Elige una carpeta</strong>
+          <span>Se incluirán todos sus archivos y subcarpetas</span>
+        </label>
+        <div id="selection" class="selection muted">Aún no has seleccionado ninguna carpeta.</div>
+        <div id="eta" class="eta muted">Tiempo mínimo: —</div>
+        <button id="startButton" class="button primary" disabled>Comenzar análisis</button>
+      </section>
+
+      <section class="card queue-card">
+        <div class="queue-header"><h2>Cola de análisis</h2><span id="processState" class="process-state">En espera</span><span id="counter">0 / 0</span></div>
+        <div class="progress"><span id="progressBar"></span></div>
+        <div id="queue" class="queue empty">Selecciona una carpeta para ver sus archivos.</div>
+        <p class="rate-note">⏱ Se envían hasta 4 archivos en paralelo cada minuto para respetar el límite de VirusTotal.</p>
+      </section>
+
+      <section class="card history-card">
+        <div class="queue-header"><h2>Historial persistente</h2><button id="refreshHistory" class="button secondary">Actualizar</button></div>
+        <div id="history" class="history empty">Todavía no hay análisis registrados.</div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
